@@ -3,6 +3,13 @@ qb-core black market
 
 you need to hack someone called CRAZY JACK and make sure to not hit jack bec he will kill and you will lose him
 
+add to qb-core/shared/items
+
+```
+	['vpn'] 			 	 	     = {['name'] = 'vpn', 			  		        ['label'] = 'vpn', 					    ['weight'] = 700, 		['type'] = 'item', 		['image'] = 'vpn.png', 				    ['unique'] = true, 		['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'vpn for good use'},
+	['darklaptop'] 			 	 	 = {['name'] = 'darklaptop', 			  		['label'] = 'Laptop', 					['weight'] = 700, 		['type'] = 'item', 		['image'] = 'laptop.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'this laptop need vpn to make it work'},
+
+```
 1)  go to laster house
 
 
