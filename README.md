@@ -10,6 +10,9 @@ add to qb-core/shared/items
 	['darklaptop'] 			 	 	 = {['name'] = 'darklaptop', 			  		['label'] = 'Laptop', 					['weight'] = 700, 		['type'] = 'item', 		['image'] = 'laptop.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'this laptop need vpn to make it work'},
 
 ```
+![vpn](https://user-images.githubusercontent.com/89742984/190626872-e76710fb-ca0a-4231-9e0d-137bb909cb1c.png)
+
+
 1)  go to laster house
 
 
