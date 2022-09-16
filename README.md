@@ -27,7 +27,7 @@ you need to hack someone called CRAZY JACK
 
 ![image](https://user-images.githubusercontent.com/89742984/190622904-64d64256-16b2-4156-8056-0f9742f0fe3c.png)
 
-6)  talk with jack and some good item
+6)  talk with jack and buy some good item
 
 ![image](https://user-images.githubusercontent.com/89742984/190623303-f3247ff9-ef9c-4f1b-a814-4cf990a83608.png)
 
