@@ -1,5 +1,5 @@
 # qb-blackmarket
-qb-core black market
+qb-core blackmarket
 
 you need to hack someone called CRAZY JACK 
 
