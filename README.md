@@ -1,7 +1,7 @@
 # qb-blackmarket
 qb-core black market
 
-you need to hack someone called CRAZY JACK
+you need to hack someone called CRAZY JACK and make sure to hit jack bec he will kill and you will lose him
 
 1)  go to laster house
 
