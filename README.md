@@ -9,7 +9,7 @@ you need to find crazy jack on the map be hacking his phone and get his loaction
 2) step : you need a laptop and vpn
 ![image](https://user-images.githubusercontent.com/89742984/190621563-6be75ebc-dbe6-4efe-9e29-48638d1212dd.png)
 
-3) step : hacking minigame
+3) step : phone hacking
 ![image](https://user-images.githubusercontent.com/89742984/190622082-11b1b912-414e-4b3e-8a9f-86fde5a955c8.png)
 
 4) step : check your mail to get crazy jack loaction
