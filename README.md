@@ -3,6 +3,8 @@ qb-core black market
 
 you need to hack someone called CRAZY JACK and make sure to not hit jack bec he will kill and you will lose him
 
+ped spawn is random you can change it form config
+
 add to qb-core/shared/items
 
 ```
