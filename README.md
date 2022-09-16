@@ -7,7 +7,7 @@ make sure to not hit jack bec you will lose him
 
 ped spawn is random you can change it form config
 
-you start coding from here : https://docs.qbcore.org/qbcore-documentation/
+you can start coding from here : https://docs.qbcore.org/qbcore-documentation/
 
 add to qb-core/shared/items
 
