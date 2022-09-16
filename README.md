@@ -3,7 +3,7 @@ qb-core black market
 
 you need to find crazy jack on the map be hacking his phone and get his loaction
 
-1) step : got laster house
+1) step : go to laster house
 ![image](https://user-images.githubusercontent.com/89742984/190621380-b331e282-9798-48b3-a890-d04a9cdad645.png)
 
 2) step : you need a laptop and vpn
