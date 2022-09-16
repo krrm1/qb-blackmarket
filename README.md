@@ -1,7 +1,7 @@
 # qb-blackmarket
 qb-core black market
 
-you need to find crazy jack on the map and hack his phone to get his loaction
+you need to hack someone called CRAZY JACK
 
 1) step : go to laster house
 
