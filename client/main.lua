@@ -1,6 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local insideLaster = false
-local LasterHouse = PolyZone:Create({
+local insideLester = false
+local LesterHouse = PolyZone:Create({
     vector2(1273.87, -1714.95),
     vector2(1274.74, -1716.98),
     vector2(1278.85, -1714.55),
@@ -9,7 +9,7 @@ local LasterHouse = PolyZone:Create({
     vector2(1271.5, -1713.62),
     vector2(1273.06, -1713.11)
 }, {
-    name="LasterHouse",
+    name="LesterHouse",
     minZ=51.0,
     maxZ=57.0,
     debugGrid=false,
@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
     while true do
         local plyPed = PlayerPedId()
         local coord = GetEntityCoords(plyPed)
-        insideLaster = LasterHouse:isPointInside(coord)
+        insideLester = LesterHouse:isPointInside(coord)
         Citizen.Wait(500)
     end
 end)
@@ -34,7 +34,7 @@ local function Success(success)
 
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = 'new mail',
-            subject = "Laster 🤓",
+            subject = "Lester 🤓",
             message = 'press ✔ to get Crazy Jack current location',
             button = {
                 enabled = true,
@@ -59,10 +59,10 @@ local function Success(success)
 end
 
 RegisterNetEvent('qb-blackmarket:Uselaptop', function()
-    if insideLaster == true then
+    if insideLester == true then
         TriggerEvent("mhacking:show")
         TriggerEvent("mhacking:start", math.random(6, 7), math.random(20, 20), Success)
-        QBCore.Functions.Notify('You just connect to laster wifi', 'success', 5000)
+        QBCore.Functions.Notify('You just connect to lester wifi', 'success', 5000)
     else
         QBCore.Functions.Notify('No wifi', 'error', 5000)
     end
