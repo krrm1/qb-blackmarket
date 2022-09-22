@@ -19,7 +19,7 @@ add to qb-core/shared/items
 ![vpn](https://user-images.githubusercontent.com/89742984/190626872-e76710fb-ca0a-4231-9e0d-137bb909cb1c.png)
 
 
-1)  go to laster house
+1)  go to Lester house
 
 
 ![image](https://user-images.githubusercontent.com/89742984/190621380-b331e282-9798-48b3-a890-d04a9cdad645.png)
