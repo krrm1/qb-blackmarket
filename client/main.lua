@@ -34,7 +34,7 @@ local function Success(success)
 
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = 'new mail',
-            subject = "Lester 🤓",
+            subject = "Lester",
             message = 'press ✔ to get Crazy Jack current location',
             button = {
                 enabled = true,
