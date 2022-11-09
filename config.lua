@@ -1,5 +1,6 @@
 Config = Config or {}
 
+-- make sure item in small capital !!!
 Config.Items = {
     ['weapon_pistol'] = 2500,
     ['meth'] = 400,
