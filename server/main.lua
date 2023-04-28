@@ -13,7 +13,7 @@ RegisterNetEvent('qb-blackmarket:Buyitems', function (cd)
     local cash = Player.Functions.GetMoney('cash')
     item = cd.item
     price = cd.price
-    if cash >= price then
+    if Player.Functions.AddItem(item, 1) and cash >= price then
         Player.Functions.RemoveMoney('cash', price)
         Player.Functions.AddItem(item, 1)
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")
