@@ -1,9 +1,10 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateUseableItem('darklaptop', function(source)
-	local Player = QBCore.Functions.GetPlayer(source)
-	if Player.Functions.GetItemByName('vpn') then
-    TriggerClientEvent('qb-blackmarket:Uselaptop', source)
+    local Player = QBCore.Functions.GetPlayer(source)
+    if Player.Functions.GetItemByName('vpn') then
+        Player.Functions.RemoveItem('vpn', 1)
+        TriggerClientEvent('qb-blackmarket:Uselaptop', source)
     end
 end)
 
@@ -26,4 +27,3 @@ RegisterNetEvent('qb-blackmarket:Buyitems', function(cd)
         TriggerClientEvent('QBCore:Notify', src, 'You don\'t have enough cash.', 'error')
     end
 end)
-
