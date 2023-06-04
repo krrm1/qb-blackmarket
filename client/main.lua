@@ -25,46 +25,32 @@ Citizen.CreateThread(function()
     end
 end)
 
-local function Success(success)
-    local num1 = math.random(100, 500)
-    local num2 = math.random(100, 500)
+local function SendEmail()
+    TriggerServerEvent('qb-phone:server:sendNewMail', {
+        sender = 'Лудия Джак',
+        subject = "Стока",
+        message = 'Сега съм тук побързай ще тръгвам скоро по работа',
+        button = {
+            enabled = true,
+            buttonEvent = 'qb-blackmarket:Getjacklocation',
+        }
+    })
+end
 
-    if success then
-        TriggerEvent("mhacking:hide")
-
-        TriggerServerEvent('qb-phone:server:sendNewMail', {
-            sender = 'new mail',
-            subject = "Lester",
-            message = 'press ✔ to get Crazy Jack current location',
-            button = {
-                enabled = true,
-                buttonEvent = 'qb-blackmarket:Getjacklocation',
-            }
-        })
-
-        if num1 == num2 then
-            QBCore.Functions.Notify('Your vpn just burned :/', 'error', 5000)
-        end
-
-        QBCore.Functions.Notify('Check your mail', 'success', 5000)
-    else
-        TriggerEvent("mhacking:hide")
-
-        if num1 == num2 then
-            QBCore.Functions.Notify('Your vpn just burned :/', 'error', 5000)
-        end
-
-        QBCore.Functions.Notify('You lost hacking', 'error', 5000)
-    end
+local function DisplayNotification(message, type, duration)
+    TriggerEvent('QBCore:Notify', message, type, duration)
 end
 
 RegisterNetEvent('qb-blackmarket:Uselaptop', function()
-    if insideLester == true then
-        TriggerEvent("mhacking:show")
-        TriggerEvent("mhacking:start", math.random(6, 7), math.random(20, 20), Success)
-        QBCore.Functions.Notify('You just connect to lester wifi', 'success', 5000)
-    else
-        QBCore.Functions.Notify('No wifi', 'error', 5000)
+    if insideLester then
+        exports['ps-ui']:Thermite(function(success)
+            if success then
+                DisplayNotification('You just connected to Lester wifi', 'success', 5000)
+                SendEmail()
+            else
+                DisplayNotification('No wifi', 'error', 5000)
+            end
+        end, 10, 5, 3) -- Time, Gridsize (5, 6, 7, 8, 9, 10)
     end
 end)
 
@@ -74,25 +60,27 @@ RegisterNetEvent('qb-blackmarket:Getjacklocation', function(data)
 
     RequestModel(model)
     while not HasModelLoaded(model) do
-    Wait(0)
+        Wait(0)
     end
-    entity = CreatePed(0, model, coords2, true, false)
-    SetNewWaypoint(coords2)
+
+    local entity = CreatePed(0, model, coords2, true, false)
+    SetWaypointOff()
+    SetNewWaypoint(coords2.x, coords2.y, coords2.z, 4) -- Set waypoint color to red (4)
 end)
 
 RegisterNetEvent('qb-blackmarket:Jackmenu', function()
-    local jackList = {}
-
-    jackList[#jackList + 1] = {
-        isMenuHeader = true,
-        header = 'Crazy Jack Market',
-        icon = 'fa-solid fas fa-shop'
+    local jackList = {
+        {
+            isMenuHeader = true,
+            header = 'Лудия Джак',
+            icon = 'fa-solid fas fa-shop'
+        }
     }
 
-    for k,v in pairs(Config.Items) do
+    for k, v in pairs(Config.Items) do
         jackList[#jackList + 1] = {
             header = QBCore.Shared.Items[k].label,
-            txt = '$'.. v,
+            txt = '$' .. v,
             icon = k,
             params = {
                 isServer = true,
@@ -106,7 +94,7 @@ RegisterNetEvent('qb-blackmarket:Jackmenu', function()
     end
 
     jackList[#jackList + 1] = {
-        header = 'close',
+        header = 'Затвори',
         icon = 'fas fa-xmark',
         params = {
             event = 'qb-menu:client:closeMenu',
@@ -117,24 +105,35 @@ RegisterNetEvent('qb-blackmarket:Jackmenu', function()
 end)
 
 Citizen.CreateThread(function()
-local models = {
-    Config.model,
-  }
-  exports['qb-target']:AddTargetModel(models, {
-    options = {
-      {
-        num = 1,
-        type = "client",
-        event = "qb-blackmarket:Jackmenu",
-        icon = 'fas fa-face-laugh-wink',
-        label = 'Crazy Jack',
-        canInteract = function(entity, distance, data) 
-          if GetEntityHealth(entity) <= 190 then return false end 
-          return true
-        end,
+    local models = {
+        Config.model,
+    }
 
-      }
-    },
-    distance = 1.5,
-  })
+    exports['qb-target']:AddTargetModel(models, {
+        options = {
+            {
+                num = 1,
+                type = "client",
+                event = "qb-blackmarket:Jackmenu",
+                icon = 'fas fa-face-laugh-wink',
+                label = 'Лудия Джак',
+                canInteract = function(entity, distance, data) 
+                    if GetEntityHealth(entity) <= 190 then
+                        return false
+                    end
+                    return true
+                end,
+            }
+        },
+        distance = 1.5,
+    })
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        local plyPed = PlayerPedId()
+        local coord = GetEntityCoords(plyPed)
+        insideLester = LesterHouse:isPointInside(coord)
+        Citizen.Wait(500)
+    end
 end)
