@@ -2,6 +2,7 @@
 # Better version of qb-blackmarket
 My edit of the https://github.com/krrm1/qb-blackmarket
 I fixed some bugs like:buying without money, not getting mail etc
+
 VPN has been removed now once used idea by https://github.com/nzkfc 
 
 
